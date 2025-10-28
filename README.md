@@ -48,31 +48,31 @@ next-blog-backend/
 ├── tsconfig.json  
 └── README.md  
 
-⚙️ Installation & Setup  
-1️⃣ Creation  
+### Installation & Setup  
+1. Creation  
 create a folder named by PrismaPortfolio    
 open it in VS code  
 create src folder and also other necessary folder and file like modules, app.ts, server.ts and so on  
 
-2️⃣ Install dependencies  
+2. Install dependencies  
 npm install  
 
-3️⃣ Create .env file  
+3. Create .env file  
 PORT="5000"  
 NODE_ENV="development"  
 DATABASE_URL="postgresql://postgres:12345@localhost:5432/prisma_blog?schema=public"    
 
 🗃️ Prisma Setup  
-4️⃣ Generate Prisma Client  
+4. Generate Prisma Client  
 npx prisma generate  
 
-5️⃣ Push schema to database  
+5. Push schema to database  
 npx prisma db push  
 
-(Optional) Run Migrations  
+6. Run Migrations  
 npx prisma migrate dev --name init  
 
-6️⃣ Open Prisma Studio (Database UI)  
+7. Open Prisma Studio (Database UI)  
 npx prisma studio  
 
 🧩 Scripts  
@@ -82,11 +82,11 @@ npm run build
 npm start  	
 npx prisma studio  	
 npx prisma generate  	
-🧠 API Overview  
+### API Overview  
 🔹 Base URL  
 http://localhost:5000/api/v1  
 
-## Endpoints  
+### Endpoints  
 🔹 Project Endpoints  
 Method	Endpoint	    Description  
 POST	/project	    Create new project  
@@ -116,7 +116,7 @@ PATCH	/post/:id	Update post
 DELETE	/post/:id	Delete post  
 
 
-🧯 Error Handling  
+### Error Handling  
 
 All API responses follow a consistent structure:  
 
@@ -126,7 +126,7 @@ All API responses follow a consistent structure:
   "error": "Error message here"  
 }  
 
-🧳 Deployment  
+### Deployment  
 1. Build for production  
     npm run build  
 
