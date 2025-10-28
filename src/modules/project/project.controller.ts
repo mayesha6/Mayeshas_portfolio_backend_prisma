@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { PostServices } from "./project.services";
+import { ProjectServices } from "./project.services";
 
 const createProject = async (
   req: Request,
