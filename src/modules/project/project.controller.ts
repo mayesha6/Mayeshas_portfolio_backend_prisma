@@ -31,10 +31,8 @@ const getAllProject = async (
   try {
     const page = Number(req.query.page) || 1;
     const limit = Number(req.query.limit) || 10;
-    const search = (req.query.search as string) || "";
-    const isFeatured = req.query.isFeatured
-      ? req.query.isFeatured === "true"
-      : undefined;
+    const search = (req.query.search as string) || "";    
+    const techStack = req.query.techStack ? (req.query.techStack as string).split(",") : []
     const sortedBy = (req.query.sortedBy as string) || "";
     const sortedOrder = (req.query.sortedOrder as string) || "";
 
@@ -42,7 +40,7 @@ const getAllProject = async (
       page,
       limit,
       search,
-      isFeatured,
+      techStack,
       sortedBy,
       sortedOrder,
     });
