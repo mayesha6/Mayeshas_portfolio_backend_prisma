@@ -76,12 +76,12 @@ npx prisma migrate dev --name init
 npx prisma studio  
 
 🧩 Scripts  
-Command	Description  
-npm run dev  	
-npm run build  	
-npm start  	
-npx prisma studio  	
-npx prisma generate  	
+Command	Description    
+npm run dev     	
+npm run build    	
+npm start    	
+npx prisma studio    	
+npx prisma generate    	
 ### API Overview  
 🔹 Base URL  
 http://localhost:5000/api/v1  
