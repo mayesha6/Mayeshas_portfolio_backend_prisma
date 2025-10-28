@@ -5,6 +5,7 @@ import { userRouter } from "./modules/user/user.routes";
 import { postRouter } from "./modules/post/post.routes";
 import { authRouter } from "./modules/auth/auth.routes";
 import cookieParser from "cookie-parser";
+import { projectRouter } from "./modules/project/project.routes";
 
 
 const app = express();
@@ -28,6 +29,7 @@ app.use((req, _res, next) => {
 app.use("/api/v1/user", userRouter)
 app.use("/api/v1/post", postRouter)
 app.use("/api/v1/auth", authRouter)
+app.use("/api/v1/auth", projectRouter)
 
 // Default route for testing
 app.get("/", (_req, res) => {
