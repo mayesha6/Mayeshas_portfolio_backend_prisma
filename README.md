@@ -1,101 +1,137 @@
+# Personal Portfolio – Backend
 
-# Next Blog Starter
+A Node.js + Express + Prisma backend API for managing blogs, projects including CRUD operations, filtering, sorting, and pagination for Perdonal Portfolio.
 
-A simple **Blog Application Starter Pack** built with **TypeScript, Express.js**.  
-This project is designed for the **Next Level Web Development Bootcamp** to help learners practice Prisma hands-on by building a blog platform.
+## Tech Stack
 
----
+Node.js – JavaScript runtime
 
-## Features
-- TypeScript + Express.js setup
-- Modular project structure
-- Environment configuration with `dotenv`
-- Ready to extend with blog modules (Posts, Users, etc.)
+Express.js – Web framework
 
----
+Prisma ORM – Database ORM for PostgreSQL / MySQL / SQLite
 
-## Installation
+TypeScript – Type safety
 
-Clone the repository:
+JWT – Authentication (optional)
 
-```bash
-git clone https://github.com/Apollo-Level2-Web-Dev/next-blog-starter.git
-cd next-blog-starter
-```
+CORS & Compression – Middleware for performance and security
 
-Install dependencies:
+## Project Structure
+next-blog-backend/  
+├── prisma/  
+│   ├── schema.prisma  
+│   └── migrations/  
+├── src/  
+│   ├── app.ts  
+│   ├── server.ts  
+│   ├── config/  
+│   │   └── db.ts  
+│   ├── modules/  
+│   │   └── project/  
+│   │       ├── project.controller.ts  
+│   │       ├── project.service.ts  
+│   │       └── project.routes.ts  
+│   │   └── post/  
+│   │       ├── post.controller.ts  
+│   │       ├── post.service.ts  
+│   │       └── post.routes.ts  
+│   │   └── auth/  
+│   │       ├── auth.controller.ts  
+│   │       ├── auth.service.ts  
+│   │       └── auth.routes.ts  
+│   │   └── user/  
+│   │       ├── user.controller.ts  
+│   │       ├── user.service.ts  
+│   │       └── user.routes.ts  
+├── .env  
+├── package.json  
+├── tsconfig.json  
+└── README.md  
 
-```bash
-# using npm
-npm install
+⚙️ Installation & Setup  
+1️⃣ Creation  
+create a folder named by PrismaPortfolio    
+open it in VS code  
+create src folder and also other necessary folder and file like modules, app.ts, server.ts and so on  
 
-# using yarn
-yarn install
+2️⃣ Install dependencies  
+npm install  
 
-# using pnpm
-pnpm install
-```
+3️⃣ Create .env file  
+PORT="5000"  
+NODE_ENV="development"  
+DATABASE_URL="postgresql://postgres:12345@localhost:5432/prisma_blog?schema=public"    
 
-Setup environment variables:
+🗃️ Prisma Setup  
+4️⃣ Generate Prisma Client  
+npx prisma generate  
 
-```bash
-cp .env.example .env
-```
+5️⃣ Push schema to database  
+npx prisma db push  
 
-Run the development server:
+(Optional) Run Migrations  
+npx prisma migrate dev --name init  
 
-```bash
-# using npm
-npm run dev
+6️⃣ Open Prisma Studio (Database UI)  
+npx prisma studio  
 
-# using yarn
-yarn dev
+🧩 Scripts  
+Command	Description  
+npm run dev  	
+npm run build  	
+npm start  	
+npx prisma studio  	
+npx prisma generate  	
+🧠 API Overview  
+🔹 Base URL  
+http://localhost:5000/api/v1  
 
-# using pnpm
-pnpm dev
-```
+## Endpoints  
+🔹 Project Endpoints  
+Method	Endpoint	    Description  
+POST	/project	    Create new project  
+GET	    /project	    Get all projects (supports pagination, search, sorting)  
+GET	    /project/:id	Get single project by ID  
+PATCH	/project/:id	Update project  
+DELETE	/project/:id	Delete project  
 
----
+🔹 User Endpoints  
+Method	Endpoint	Description  
+POST	/user	    Create new user  
+GET	    /user	    Get all users  
+GET	    /user/:id	Get single user by ID  
+PATCH	/user/:id	Update user  
+DELETE	/user/:id	Delete user  
 
-## Folder Structure
+🔹 Auth Endpoints  
+Method	Endpoint	Description  
+POST	/auth/login	User logged in  
 
-```
-Prisma-Blog/
-│── node_modules/          # Dependencies
-│── src/
-│   ├── app.ts             # Express app configuration
-│   ├── server.ts          # Server entry point
-│   ├── config/            # Environment & configuration files
-│   └── modules/           # Application modules (posts, users, etc.)
-│── package.json           # Project metadata & scripts
-│── pnpm-lock.yaml         # Lockfile (pnpm)
-│── tsconfig.json          # TypeScript configuration
-│── README.md              # Documentation
-```
+🔹 Post Endpoints  
+Method	Endpoint	Description  
+POST	/post	    Create new project  
+GET	    /post	    Get all posts (supports pagination, search, sorting)  
+GET	    /post/:id	Get single post by ID  
+PATCH	/post/:id	Update post  
+DELETE	/post/:id	Delete post  
 
----
 
-## Scripts
+🧯 Error Handling  
 
-```bash
-# Run in development mode
-pnpm dev
+All API responses follow a consistent structure:  
 
-# Build for production
-pnpm build
+{  
+  "success": false,  
+  "message": "Failed to create project",  
+  "error": "Error message here"  
+}  
 
-# Run production build
-pnpm start
-```
+🧳 Deployment  
+1. Build for production  
+    npm run build  
 
----
+2. Start the production server  
+    npm start  
 
-## Learning Objective
-
-This starter pack is part of the **Next Level Web Development Bootcamp** curriculum.
-By using this project, students will learn how to:
-
-* Connect a Node.js app with Prisma ORM
-* Build modular APIs
-* Manage environment variables
-* Structure scalable backend projects
+3. Deploy  
+    Vercel   
