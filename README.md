@@ -63,6 +63,7 @@ NODE_ENV="development"
 DATABASE_URL="postgresql://postgres:12345@localhost:5432/prisma_blog?schema=public"    
 
 🗃️ Prisma Setup  
+
 4. Generate Prisma Client  
 npx prisma generate  
 
