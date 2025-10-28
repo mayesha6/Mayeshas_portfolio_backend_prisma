@@ -50,7 +50,6 @@ model Project {
   repolink String?
   techStack String[]
   views Int @default(0)
-  authorId Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
