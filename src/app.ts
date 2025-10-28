@@ -29,7 +29,7 @@ app.use((req, _res, next) => {
 app.use("/api/v1/user", userRouter)
 app.use("/api/v1/post", postRouter)
 app.use("/api/v1/auth", authRouter)
-app.use("/api/v1/auth", projectRouter)
+app.use("/api/v1/project", projectRouter)
 
 // Default route for testing
 app.get("/", (_req, res) => {
