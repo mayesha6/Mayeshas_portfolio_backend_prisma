@@ -92,6 +92,9 @@ const updateProjectById = async (
       title: req.body.title,
       content: req.body.content,
       thumbnail: req.body.thumbnail,
+      livelink: req.body.livelink,
+      repolink: req.body.repolink,
+      techStack: req.body.techStack,
     });
     res.status(200).json({
       success: true,

@@ -10,14 +10,12 @@ import { projectRouter } from "./modules/project/project.routes";
 
 const app = express();
 
-// Middleware
-app.use(compression()); // Compresses response bodies for faster delivery
+app.use(compression()); 
 app.use(cookieParser());
-app.use(express.json()); // Parse incoming JSON requests
-
+app.use(express.json()); 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://personal-portfolio-six-sigma-40.vercel.app",
     credentials: true,
   })
 );
@@ -25,19 +23,18 @@ app.use((req, _res, next) => {
   console.log(`[${req.method}] ${req.url}`);
   next();
 });
-// Routes
+
 app.use("/api/v1/user", userRouter)
 app.use("/api/v1/post", postRouter)
 app.use("/api/v1/auth", authRouter)
 app.use("/api/v1/project", projectRouter)
 
-// Default route for testing
+
 app.get("/", (_req, res) => {
-  res.send("API is running");
+  res.send("My portfolio API is running...");
 });
 
 
-// 404 Handler
 app.use((req, res, next) => {
   res.status(404).json({
     success: false,
